@@ -1,29 +1,55 @@
 [![license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 
-# Overview
+## Overview
 
 CUBA Amazon Add-on enables using supported AWS services, for now it supports:
 * Amazon Simple Storage Service (S3)
 
-# Installation
+## Installation
 
-1. Open your application in CUBA Studio.
+The add-on can be added to your project in one of the ways described below. Installation from the Marketplace is the simplest way. The last version of the add-on compatible with the used version of the platform will be installed. 
+Also, you can install the add-on by coordinates choosing the required version of the add-on from the table.
 
-2. Double-click *Add-ons*.
+In case you want to install the add-on by manual editing or by building from sources see the complete add-ons installation guide in [CUBA Platform documentation](https://doc.cuba-platform.com/manual-latest/manual.html#app_components_usage).
+## From the Marketplace
 
-3. Click the *Gear* button and select *Install by coordinates* item.
+1. Open your application in CUBA Studio. Check the latest version of CUBA Studio on the [CUBA Platform site](https://www.cuba-platform.com/download/previous-studio/).
+2. Go to *CUBA -> Marketplace* in the main menu.
 
-    ![Adding custom component1](img/adding_component1.png)
 
-4. Specify the coordinates of the component in the corresponding field as follows: group:name:version.
+![marketplace](img/marketplace.png)
 
-   ![Adding component2](img/adding_component2.png)
+3. Find the <add-on name> add-on there.
 
-   * Artifact group: *com.haulmont.addon.cubaaws*
-   * Artifact name: *cubaaws-global*
-   * Version: *add-on version*
 
-# Amazon S3 File Storage configuration
+![addons](img/addons.png)
+
+4. Click *Install* and apply the changes.
+The add-on corresponding to the used platform version will be installed.
+
+## By coordinates
+
+1. Open your application in CUBA Studio. Check the latest version of CUBA Studio on the [CUBA Platform site](https://www.cuba-platform.com/download/previous-studio/).
+2. Go to *CUBA -> Marketplace* in the main menu.
+3. Click the icon in the upper-right corner.
+
+
+
+![by-coordinates](img/by-coordinates.png)
+
+4. Paste the add-on coordinates in the corresponding field as follows:
+
+`com.haulmont.addon.dashboard:dashboard-global:<add-on version>`
+
+where `<add-on version>` is compatible with the used version of the CUBA platform.
+
+| Platform Version | Add-on Version |
+|------------------|----------------|
+| 7.2.X            | 1.0.0          |
+
+5. Click *Install* and apply the changes. The add-on will be installed to your project.
+
+## Amazon S3 File Storage configuration
 
  Add the following line into `spring.xml`:
  ```xml
