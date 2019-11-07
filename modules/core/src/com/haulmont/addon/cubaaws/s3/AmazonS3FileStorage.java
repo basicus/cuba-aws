@@ -174,15 +174,13 @@ public class AmazonS3FileStorage implements FileStorageAPI {
                 .key(resolveFileName(fileDescr))
                 .build();
 
-        InputStream is;
-        try {
-            is = s3Client.getObject(getObjectRequest);
+        try (InputStream is = s3Client.getObject(getObjectRequest)) {
+            return is != null;
         } catch (NoSuchKeyException e) {
             return false;
         } catch (Exception e) {
             throw new FileStorageException(FileStorageException.Type.IO_EXCEPTION, fileDescr.getId().toString(), e);
         }
-        return is != null;
     }
 
     protected String resolveFileName(FileDescriptor fileDescr) {
